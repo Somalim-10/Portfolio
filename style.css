@@ -403,4 +403,86 @@ footer span { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   #about, #contact { padding: 80px 24px; }
   footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px; }
+  #intro { grid-template-columns: 1fr; padding: 68px 24px 0; gap: 32px; }
+  .project-showcase { grid-template-columns: 1fr; gap: 40px; }
+  .video-frame { min-height: 300px; }
+  .img-strip img { width: 120px; height: 80px; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 24px; height: 60px; }
+  .nav-links { gap: 0px; }
+  .nav-links a { padding: 6px 12px; font-size: 10px; }
+  .hero-title { font-size: clamp(36px, 6vw, 60px); }
+  .hero-subtitle { font-size: clamp(28px, 5vw, 48px); margin-bottom: 24px; }
+  .hero-desc { font-size: 12px; margin-bottom: 32px; }
+  #projects { padding: 60px 24px; }
+  .section-header { margin-bottom: 40px; }
+  .showcase-num { font-size: 28px; }
+  .showcase-title { font-size: 24px; margin-bottom: 16px; }
+  .showcase-desc { font-size: 12px; line-height: 1.7; }
+  .stack-label { font-size: 11px; }
+  .stack-tag { font-size: 10px; padding: 6px 10px; }
+  .video-frame { min-height: 250px; }
+  .about-title { font-size: 24px; }
+  .about-title br::after { content: " "; }
+  .skill-row { margin-bottom: 16px; }
+  .skill-name { font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 12px; }
+  nav { padding: 0 16px; height: 56px; }
+  .nav-logo { font-size: 16px; }
+  .nav-links { gap: 0; }
+  .nav-links a { padding: 6px 8px; font-size: 9px; }
+  .nav-cta { padding: 6px 12px !important; }
+  
+  #intro { padding: 56px 16px 0; gap: 24px; }
+  .hero-left { padding-top: 16px; }
+  .hero-label { font-size: 9px; margin-bottom: 16px; gap: 8px; }
+  .hero-title { font-size: clamp(28px, 5vw, 44px); margin-bottom: 8px; line-height: 1; }
+  .hero-subtitle { font-size: clamp(20px, 4.5vw, 32px); margin-bottom: 16px; }
+  .hero-desc { font-size: 11px; line-height: 1.6; max-width: 100%; margin-bottom: 24px; }
+  .hero-btn { font-size: 11px; padding: 12px 20px; gap: 6px; }
+  .photo-frame { height: 250px; }
+  
+  #projects { padding: 48px 16px; }
+  .section-header { margin-bottom: 32px; gap: 12px; }
+  .section-tag { font-size: 9px; }
+  .section-count { font-size: 11px; }
+  
+  .project-showcase { margin-top: 48px !important; grid-template-columns: 1fr; gap: 24px; }
+  .showcase-left { gap: 12px; }
+  .showcase-num { font-size: 18px; margin-bottom: 8px; }
+  .showcase-category { font-size: 9px; gap: 6px; margin-bottom: 8px; }
+  .showcase-title { font-size: 18px; margin-bottom: 12px; }
+  .showcase-desc { font-size: 11px; line-height: 1.6; margin-bottom: 12px; }
+  .showcase-stack { margin-top: 12px !important; }
+  .stack-label { font-size: 10px; margin-bottom: 8px; }
+  .stack-tags { gap: 6px; flex-wrap: wrap; }
+  .stack-tag { font-size: 9px; padding: 4px 8px; }
+  .showcase-links { margin-top: 16px; }
+  .showcase-link { font-size: 10px; padding: 8px 12px; }
+  
+  .video-frame { min-height: 200px; }
+  .img-strip { gap: 6px; padding-bottom: 4px; }
+  .img-strip img { width: 100px; height: 70px; flex: 0 0 100px; }
+  
+  #about { padding: 48px 16px; }
+  .about-grid { gap: 32px; }
+  .about-left { gap: 12px; }
+  .about-title { font-size: 18px; margin-bottom: 12px; line-height: 1.2; }
+  .about-desc { font-size: 11px; line-height: 1.6; margin-bottom: 12px; }
+  
+  .about-right { gap: 12px; }
+  .skill-row { margin-bottom: 12px; }
+  .skill-name { font-size: 11px; }
+  .skill-bar-wrap { height: 4px; }
+  
+  footer { padding: 16px; gap: 12px; font-size: 10px; }
+  .footer-links { gap: 12px; font-size: 9px; }
+  
+  .lightbox-content { max-width: 95%; max-height: 85vh; }
+  .lightbox-close { top: -30px; font-size: 30px; width: 30px; height: 30px; }
 }
