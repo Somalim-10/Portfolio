@@ -303,6 +303,100 @@ footer span { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; }
   text-transform: uppercase; transition: color 0.25s;
 }
 .footer-links a:hover { color: var(--text); }
+.img-strip-wrap { position: relative; }
+
+.img-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px;
+  cursor: grab;
+}
+.img-strip:active { cursor: grabbing; }
+
+.img-strip::-webkit-scrollbar { height: 2px; }
+.img-strip::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
+.img-strip::-webkit-scrollbar-thumb {
+  background: rgba(212,201,168,0.3);
+  border-radius: 2px;
+}
+
+.img-strip img {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  scroll-snap-align: start;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.img-strip img:hover { border-color: rgba(212,201,168,0.5); }
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  animation: zoomIn 0.3s ease-out;
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 40px;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+.lightbox-close:hover {
+  color: var(--accent);
+}
 
 /* RESPONSIVE */
 @media (max-width: 900px) {

@@ -103,6 +103,15 @@
       </div>
       <div class="showcase-right">
         <div class="video-frame">
+          <div class="img-strip-wrap">
+  <p class="stack-label" style="margin-top: 14px;">Screenshots</p>
+  <div class="img-strip" id="strip-01">
+    <img src="ForeningPictures/image.png" alt="Screenshot 1">
+    <img src="ForeningPictures/image copy.png" alt="Screenshot 2">
+    <img src="ForeningPictures/image copy 2.png" alt="Screenshot 3">
+    <img src="ForeningPictures/image copy 3.png" alt="Screenshot 4">
+  </div>
+</div>
           <video autoplay muted loop playsinline>
             <source src="Demo2.mp4" type="video/mp4">
           </video>
@@ -129,10 +138,7 @@
         <div class="showcase-stack">
           <p class="stack-label">Tech Stack:</p>
           <div class="stack-tags">
-            <span class="stack-tag">Python</span>
             <span class="stack-tag">GitHub Codespace</span>
-            <span class="stack-tag">Discord API</span>
-            <span class="stack-tag">AI Agent</span>
             <span class="stack-tag">OpenRouter</span>
             <span class="stack-tag">Discord Developer</span>
           </div>
@@ -152,6 +158,13 @@
       </div>
       <div class="showcase-right">
         <div class="video-frame">
+          <div class="img-strip-wrap">
+            <p class="stack-label" style="margin-top: 14px;">Screenshots</p>
+            <div class="img-strip" id="strip-02">
+              <img src="NanoBotPictures/image.png" alt="Screenshot 1">
+              <img src="NanoBotPictures/image copy.png" alt="Screenshot 2">
+            </div>
+          </div>
           <video autoplay muted loop playsinline>
             <source src="NanBot2.mp4" type="video/mp4">
           </video>
@@ -182,7 +195,6 @@
             <span class="stack-tag">.NET</span>
             <span class="stack-tag">Vue.js</span>
             <span class="stack-tag">Azure SQL</span>
-            <span class="stack-tag">Raspberry Pi</span>
             <span class="stack-tag">Web API</span>
             <span class="stack-tag">Entity Framework</span>
             <span class="stack-tag">JavaScript</span>
@@ -192,6 +204,7 @@
           <p class="stack-label">Tools Used:</p>
           <div class="stack-tags">
             <span class="stack-tag">Visual Studio</span>
+            <span class="stack-tag">Raspberry Pi</span>
             <span class="stack-tag">GitHub</span>
             <span class="stack-tag">Azure Portal</span>
             <span class="stack-tag">Postman</span>
@@ -203,6 +216,14 @@
       </div>
       <div class="showcase-right">
         <div class="video-frame">
+          <div class="img-strip-wrap">
+            <p class="stack-label" style="margin-top: 14px;">Screenshots</p>
+            <div class="img-strip" id="strip-03">
+              <img src="LifeAsAGamePictures/image.png" alt="Screenshot 1">
+              <img src="LifeAsAGamePictures/image copy.png" alt="Screenshot 2">
+              <img src="LifeAsAGamePictures/image copy 2.png" alt="Screenshot 3">
+            </div>
+          </div>
           <video autoplay muted loop playsinline>
             <source src="Demo.mp4" type="video/mp4">
           </video>
@@ -221,7 +242,7 @@
       <div class="about-left">
         <h2 class="about-title">Softwareudvikler<br><em></em></h2>
         <p class="about-desc">
-          Jeg er en passioneret softwareudvikler under uddannelse med en bred interesse for alt fra backend-systemer til AI-eksperimenter. Jeg elsker at bygge ting der løser rigtige problemer — især når de faktisk virker første gang. Lære nye teknologier så hurtigt som internet forbindelsen tillader.
+        Jeg er en meget optimistisk og positiv person, ville jeg selv mene, meget snakkesalig, så snart man lærer mig at kende, hvis man giver mig plads til det. Og disse karakteristika tager jeg også med mig ind i mit arbejde. Jeg elsker at samarbejde og dele ideer, og jeg tror på at de bedste løsninger kommer fra teamwork og åben kommunikation. Jeg er altid klar til at lære nye ting og tage fat på udfordringer.
         </p>
         <p class="about-desc">
           Udover kodning interesserer jeg mig for open source og AI-agenter — uden at skabe nye bugs i processen (det mislykkes ofte).
@@ -284,8 +305,47 @@
     </div>
   </footer>
 
+  <!-- IMAGE LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="">
+      <button class="lightbox-close">&times;</button>
+    </div>
+  </div>
+
   <script>
-   
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.img-strip img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
